@@ -19,7 +19,7 @@ stages:
     displayName: Build
     pool: 
       name: terraform
-      demands: Agent.Name -equals "terraform-hp"
+      demands: Agent.Name -equals terraform-hp
       
     steps:
     - task: Docker@2
