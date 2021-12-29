@@ -41,3 +41,6 @@ msbuild.wrn
 
 # Terraform
 .terraform
+terraform.tfstate.backup
+terraform.tfstate
+.terraform.lock.hcl
