@@ -9,6 +9,11 @@ terraform {
   }
 }
 
+variable "imagetag" {
+  type = string
+  description = "Image tag"
+}
+
 terraform{
   backend "azurerm"{
     resource_group_name = "tf_storage_blob"
@@ -39,7 +44,7 @@ resource "azurerm_container_group" "example" {
 
   container {
     name   = "weatherapi"
-    image  = "dixonjose/lab:1"
+    image  = "dixonjose/lab:${var.imagetag}"
     cpu    = "0.5"
     memory = "1.5"
 
@@ -48,5 +53,4 @@ resource "azurerm_container_group" "example" {
       protocol = "TCP"
     }
   }
-}
-  
+}  
